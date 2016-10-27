@@ -1,0 +1,474 @@
+﻿<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>通用用户权限管理系统</title>
+
+        <!-- Vendor CSS -->
+        <!--<link href="full/vendors/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">-->
+        <link href="full/vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+        <link href="full/vendors/bower_components/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+        <link href="full/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+        <link href="full/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+		<!-- /Vendor CSS -->
+
+        <!-- CSS -->
+        <link href="full/css/app_1.min.css" rel="stylesheet">
+        <link href="full/css/app_2.min.css" rel="stylesheet">
+        <link href="css/zheng.css" rel="stylesheet">
+		<!-- /CSS -->
+    </head>
+    <body ng-app="app" ng-cloak>
+        <header id="header" class="clearfix" data-ma-theme="lightblue">
+            <ul class="h-inner">
+				<!-- sidebar侧栏开关 -->
+                <li class="hi-trigger ma-trigger" data-ma-action="sidebar-open" data-ma-target="#sidebar">
+                    <div class="line-wrap">
+                        <div class="line top"></div>
+                        <div class="line center"></div>
+                        <div class="line bottom"></div>
+                    </div>
+                </li>
+				<!-- /sidebar侧栏开关 -->
+
+				<!-- 文字logo -->
+                <li class="hi-logo hidden-xs">
+                    <a href="index.html">通用用户权限管理系统</a>
+                </li>
+				<!-- /文字logo -->
+                <!-- 图片logo -->
+                <!--
+                <li class="hidden-xs">
+                    <a href="index.html" class="m-l-10">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                </li>
+                -->
+                <!-- /图片logo -->
+
+                <li class="pull-right">
+                    <ul class="hi-menu">
+						<!-- 搜索 -->
+                        <li data-ma-action="search-open">
+                            <a href=""><i class="him-icon zmdi zmdi-search"></i></a>
+                        </li>
+						<!-- /搜索 -->
+						<!-- 消息 -->
+                        <li class="dropdown"><!--data-animation="fadeIn, fadeOut"-->
+                            <a data-toggle="dropdown" href="">
+                                <i class="him-icon zmdi zmdi-email"></i>
+                                <i class="him-counts">4</i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg pull-right">
+                                <div class="list-group">
+                                    <div class="lg-header">
+                                        消息
+                                    </div>
+                                    <div class="lg-body">
+                                        <a class="list-group-item media" href="">
+                                            <div class="pull-left">
+                                                <img class="lgi-img" src="img/avatar.jpg" alt="">
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="lgi-heading">张恕征</div>
+                                                <small class="lgi-text">你有新的消息，请注意查收！</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <a class="view-more waves-effect" href="">查看全部</a>
+                                </div>
+                            </div>
+                        </li>
+						<!-- /消息 -->
+						<!-- 提醒 -->
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" href="">
+                                <i class="him-icon zmdi zmdi-notifications"></i>
+                                <i class="him-counts">9</i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg pull-right">
+                                <div class="list-group him-notification">
+                                    <div class="lg-header">
+                                        提醒
+                                        <ul class="actions">
+                                            <li class="dropdown">
+                                                <a href="" data-ma-action="clear-notification">
+                                                    <i class="zmdi zmdi-check-all"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="lg-body">
+                                        <a class="list-group-item media" href="">
+                                            <div class="pull-left">
+                                                <img class="lgi-img" src="img/avatar.jpg" alt="">
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="lgi-heading">张恕征</div>
+                                                <small class="lgi-text">你有新的消息，请注意查收！</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <a class="view-more waves-effect" href="">查看全部</a>
+                                </div>
+                            </div>
+                        </li>
+						<!-- /提醒 -->
+						<!-- 待办事项 -->
+                        <li class="dropdown hidden-xs">
+                            <a data-toggle="dropdown" href="">
+                                <i class="him-icon zmdi zmdi-view-list-alt"></i>
+                                <i class="him-counts">2</i>
+                            </a>
+                            <div class="dropdown-menu pull-right dropdown-menu-lg">
+                                <div class="list-group">
+                                    <div class="lg-header">
+                                        待办事项
+                                    </div>
+                                    <div class="lg-body">
+                                        <div class="list-group-item">
+                                            <div class="lgi-heading m-b-5">数据库模型进度</div>
+                                            <div class="progress">
+                                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+                                                    <span class="sr-only">95% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <a class="view-more waves-effect" href="">查看全部</a>
+                                </div>
+                            </div>
+                        </li>
+						<!-- /待办事项 -->
+						<!-- 系统切换 -->
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" href="">
+                                <i class="him-icon zmdi zmdi-dropbox"></i>
+                            </a>
+                            <ul class="dropdown-menu dm-icon pull-right">
+                                <li class="skin-switch hidden-xs">
+                                    请选择系统切换
+                                </li>
+                                <li class="divider hidden-xs"></li>
+                                <li class="hidden-xs">
+                                    <a class="waves-effect" href=""><i class="zmdi zmdi-widgets"></i> CMS系统</a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect" href=""><i class="zmdi zmdi-widgets"></i> OA系统</a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect" href=""><i class="zmdi zmdi-widgets"></i> CRM系统</a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect" href=""><i class="zmdi zmdi-widgets"></i> QA系统</a>
+                                </li>
+                            </ul>
+                        </li>
+						<!-- /系统切换 -->
+						<!-- 更多选项 -->
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" href="">
+								<i class="him-icon zmdi zmdi-more-vert"></i>
+							</a>
+                            <ul class="dropdown-menu dm-icon pull-right">
+                                <li class="skin-switch hidden-xs">
+                                    <!--<span class="ss-skin bgm-blue" data-ma-action="change-skin" data-ma-skin="blue"></span>-->
+                                    <span class="ss-skin bgm-lightblue" data-ma-action="change-skin" data-ma-skin="lightblue"></span>
+                                    <span class="ss-skin bgm-bluegray" data-ma-action="change-skin" data-ma-skin="bluegray"></span>
+                                    <span class="ss-skin bgm-cyan" data-ma-action="change-skin" data-ma-skin="cyan"></span>
+                                    <span class="ss-skin bgm-teal" data-ma-action="change-skin" data-ma-skin="teal"></span>
+                                    <span class="ss-skin bgm-orange" data-ma-action="change-skin" data-ma-skin="orange"></span>
+                                </li>
+                                <li class="divider hidden-xs"></li>
+                                <li class="hidden-xs">
+                                    <a class="waves-effect" data-ma-action="fullscreen" href=""><i class="zmdi zmdi-fullscreen"></i> 全屏模式</a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect" data-ma-action="clear-localstorage" href=""><i class="zmdi zmdi-delete"></i> 清除缓存</a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect" href=""><i class="zmdi zmdi-face"></i> 隐私管理</a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect" href=""><i class="zmdi zmdi-settings"></i> 系统设置</a>
+                                </li>
+                            </ul>
+                        </li>
+						<!-- /更多选项 -->
+						<!-- 聊天 -->
+                        <li class="hidden-xs ma-trigger" data-ma-action="sidebar-open" data-ma-target="#chat">
+                            <a href=""><i class="him-icon zmdi zmdi-comment-alt-text"></i></a>
+                        </li>
+						<!-- /聊天 -->
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Top Search Content -->
+            <div class="h-search-wrap">
+                <div class="hsw-inner">
+                    <i class="waves-effect hsw-close zmdi zmdi-arrow-left" data-ma-action="search-close"></i>
+                    <input type="text" placeholder="请输入要搜索的内容">
+                </div>
+            </div>
+            <!-- /Top Search Content -->
+        </header>
+
+        <section id="main">
+			<!-- 左侧导航区 -->
+            <aside id="sidebar" class="sidebar c-overflow">
+				<!-- 个人资料区 -->
+                <div class="s-profile">
+                    <a href="" data-ma-action="profile-menu-toggle">
+                        <div class="sp-pic">
+                            <img src="img/avatar.jpg" alt="">
+                        </div>
+                        <div class="sp-info">
+							张恕征，您好！
+                            <i class="zmdi zmdi-caret-down"></i>
+                        </div>
+                    </a>
+                    <ul class="main-menu">
+                        <li>
+                            <a class="waves-effect" href="profile-about.html"><i class="zmdi zmdi-account"></i> 个人资料</a>
+                        </li>
+                        <li>
+                            <a class="waves-effect" href=""><i class="zmdi zmdi-face"></i> 隐私管理</a>
+                        </li>
+                        <li>
+                            <a class="waves-effect" href=""><i class="zmdi zmdi-settings"></i> 系统设置</a>
+                        </li>
+                        <li>
+                            <a class="waves-effect" href=""><i class="zmdi zmdi-run"></i> 退出登录</a>
+                        </li>
+                    </ul>
+                </div>
+				<!-- /个人资料区 -->
+				<!-- 菜单区 -->
+                <ul class="main-menu">
+                    <li class="active">
+                        <a class="waves-effect" href="index.html"><i class="zmdi zmdi-home"></i> 首页</a>
+                    </li>
+					<li class="sub-menu">
+                        <a class="waves-effect" href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-widgets"></i> 系统管理</a>
+                        <ul>
+                            <li><a class="waves-effect" href="javascript:;">系统注册</a></li>
+                            <li><a class="waves-effect" href="javascript:;">系统状态</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a class="waves-effect" href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-widgets"></i> 组织管理</a>
+                        <ul>
+                            <li><a class="waves-effect" href="javascript:;">组织机构</a></li>
+                        </ul>
+                    </li>
+					<li class="sub-menu">
+                        <a class="waves-effect" href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-widgets"></i> 资源管理</a>
+                        <ul>
+                            <li><a class="waves-effect" href="javascript:;">资源管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a class="waves-effect" href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-widgets"></i> 用户管理</a>
+                        <ul>
+                            <li><a class="waves-effect" href="javascript:;">用户组管理</a></li>
+                            <li><a class="waves-effect" href="javascript:;">角色管理</a></li>
+                            <li><a class="waves-effect" href="javascript:;">用户管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a class="waves-effect" href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-widgets"></i> 权限管理</a>
+                        <ul>
+                            <li><a class="waves-effect" href="javascript:;">用户组权限</a></li>
+                            <li><a class="waves-effect" href="javascript:;">角色权限</a></li>
+                            <li><a class="waves-effect" href="javascript:;">用户权限</a></li>
+                        </ul>
+                    </li>
+					<!--
+                    <li class="sub-menu">
+                        <a class="waves-effect" href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-widgets"></i> 资源管理</a>
+                        <ul>
+                            <li><a class="waves-effect" href="javascript:;">系统注册</a></li>
+                            <li><a class="waves-effect" href="javascript:;">资源管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a class="waves-effect" href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-widgets"></i> 组织与用户管理</a>
+                        <ul>
+                            <li><a class="waves-effect" href="javascript:;">组织机构</a></li>
+                            <li><a class="waves-effect" href="javascript:;">用户管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a class="waves-effect" href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-widgets"></i> 权限管理</a>
+                        <ul>
+                            <li><a class="waves-effect" href="javascript:;">用户角色管理</a></li>
+                            <li><a class="waves-effect" href="javascript:;">资源权限管理</a></li>
+                        </ul>
+                    </li>
+					-->
+                    <li class="sub-menu">
+                        <a class="waves-effect" href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-widgets"></i> 系统管理</a>
+                        <ul>
+                            <li><a class="waves-effect" href="javascript:;">系统备份</a></li>
+                            <li><a class="waves-effect" href="javascript:;">数据统计</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a class="waves-effect" href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-widgets"></i> DEMO</a>
+                        <ul>
+                            <li><a class="waves-effect" href="javascript:;">获取资源(DEMO)</a></li>
+                            <li><a class="waves-effect" href="javascript:;">获取权限(DEMO)</a></li>
+                            <li><a class="waves-effect" href="javascript:;">单点登录(DEMO)</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="upms-version">&copy; ZHENG-UPMS V1.0.1</div>
+                    </li>
+                </ul>
+				<!-- /菜单区 -->
+            </aside>
+			<!-- /左侧导航区 -->
+
+            <aside id="chat" class="sidebar">
+
+                <div class="chat-search">
+                    <div class="fg-line">
+                        <input type="text" class="form-control" placeholder="查找联系人">
+                        <i class="zmdi zmdi-search"></i>
+                    </div>
+                </div>
+
+                <div class="lg-body c-overflow">
+                    <div class="list-group">
+                        <a class="list-group-item media" href="">
+                            <div class="pull-left p-relative">
+                                <img class="lgi-img" src="img/avatar.jpg" alt="">
+                                <i class="chat-status-busy"></i>
+                            </div>
+                            <div class="media-body">
+                                <div class="lgi-heading">张恕征</div>
+                                <small class="lgi-text">一个帅哥，特别帅的帅哥！</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+
+            <section id="content">
+                <div class="container">
+					<md-tabs>
+						<md-tab label="首页">
+						<iframe class="tab_iframe" src="http://admin.hbdiy.com/hbdiy-ec-mda//brand/list" width="100%" frameborder="0" scrolling="auto" onload="changeFrameHeight(this)"></iframe>
+						</md-tab>
+					</md-tabs>
+                </div>
+            </section>
+        </section>
+
+		<!--
+        <footer id="footer">
+            Copyright &copy; 2016 ZHENG-UPMS
+            <ul class="f-menu">
+                <li><a href="http://www.zhangshuzheng.cn/upms" target="_blank">官网首页</a></li>
+            </ul>
+        </footer>
+		-->
+
+        <!-- Page Loader -->
+        <div class="page-loader">
+            <div class="preloader pls-blue">
+                <svg class="pl-circular" viewBox="25 25 50 50">
+                    <circle class="plc-path" cx="50" cy="50" r="20" />
+                </svg>
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Older IE warning message -->
+        <!--[if lt IE 9]>
+            <div class="ie-warning">
+                <h1 class="c-white">Warning!!</h1>
+                <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+                <div class="iew-container">
+                    <ul class="iew-download">
+                        <li>
+                            <a href="http://www.google.com/chrome/">
+                                <img src="img/browsers/chrome.png" alt="">
+                                <div>Chrome</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.mozilla.org/en-US/firefox/new/">
+                                <img src="img/browsers/firefox.png" alt="">
+                                <div>Firefox</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.opera.com">
+                                <img src="img/browsers/opera.png" alt="">
+                                <div>Opera</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.apple.com/safari/">
+                                <img src="img/browsers/safari.png" alt="">
+                                <div>Safari</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                                <img src="img/browsers/ie.png" alt="">
+                                <div>IE (New)</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>Sorry for the inconvenience!</p>
+            </div>
+        <![endif]-->
+
+        <!-- Javascript Libraries -->
+        <script src="full/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="full/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+		<!--
+        <script src="full/vendors/bower_components/flot/jquery.flot.js"></script>
+        <script src="full/vendors/bower_components/flot/jquery.flot.resize.js"></script>
+        <script src="full/vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+        <script src="full/vendors/sparklines/jquery.sparkline.min.js"></script>
+        <script src="full/vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+		-->
+
+		<!--
+        <script src="full/vendors/bower_components/moment/min/moment.min.js"></script>
+        <script src="full/vendors/bower_components/fullcalendar/dist/fullcalendar.min.js "></script>
+        <script src="full/vendors/bower_components/simpleWeather/jquery.simpleWeather.min.js"></script>
+		-->
+        <script src="full/vendors/bower_components/Waves/dist/waves.min.js"></script>
+        <script src="full/vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+        <script src="full/vendors/bower_components/sweetalert2/dist/sweetalert2.min.js"></script>
+        <script src="full/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+        <!-- Placeholder for IE9 -->
+        <!--[if IE 9 ]>
+            <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+        <![endif]-->
+
+		<!-- Angular.js Libraries -->
+		<script src="angular/angular-1.5.8/angular.min.js"></script>
+		<script src="angular/angular-1.5.8/angular-animate.min.js"></script>
+		<script src="angular/angular-1.5.8/angular-aria.min.js"></script>
+		<script src="angular/angular-1.5.8/angular-messages.min.js"></script>
+
+		<!-- Angular Material Library -->
+		<link rel="stylesheet" href="angular/angular-material-1.1.1/angular-material.min.css"/>
+		<script src="angular/angular-material-1.1.1/angular-material.min.js"></script>
+
+        <script src="js/zheng.js"></script>
+		<script>var app = angular.module('app', ['ngMaterial']);</script>
+    </body>
+  </html>

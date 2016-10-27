@@ -1,0 +1,49 @@
+body{font-family: roboto,'Microsoft yahei'; overflow: hidden !important;}
+.upms-version{margin-top: 10px; height: 46px; line-height: 46px; font-size: 12px; color: #777; text-align: center; border-top: 1px solid #eee;}
+
+#main{height: 100%; padding-top: 70px; padding-bottom: 0;}
+
+.animated {
+    -webkit-animation-duration: .6s;
+    animation-duration: .6s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+/* 选项卡 */
+md-tabs{height: 100%;}
+md-tabs-wrapper{background-color: #03a2ea !important;}
+md-tabs.md-default-theme .md-tab .md-ripple-container, md-tabs .md-tab .md-ripple-container{color: rgb(222,54,65);}
+md-tabs md-ink-bar{height: 3px;}
+md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar{color: #FFF; background: #FFEB3B;}
+md-tab-item.ng-scope{color: rgba(255, 255, 255, 0.8);}
+md-tab-item.md-active.ng-scope{color: #FFF; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;}
+md-icon.md-default-theme, md-icon{color: #FFF !important;}
+md-tab-content {padding: 0; overflow: hidden !important;}
+
+/* 中央区*/
+.container, .container-fluid{height: 100%; padding: 0;}
+@media (min-width: 1280px) {
+    #content:not(.content-alt) {
+        padding-left: 268px;
+        padding-right: 0
+    }
+}
+@media (min-width: 768px) and (max-width:1279px) {
+    #content {
+        padding-left: 0;
+        padding-right: 0
+    }
+}
+#content {height: 100%;}
+
+#sidebar {
+    box-shadow: 1px 0 4px rgba(0,0,0,.3);
+}
+
+/* 信息框 */
+.hi-menu>li .dropdown-menu{top: 36px;}
+
+/* 滚动条 */
+.mCSB_outside+.mCS-minimal-dark.mCSB_scrollTools_vertical, .mCSB_outside+.mCS-minimal.mCSB_scrollTools_vertical{/*left: 0;*/}
+html:not(.ie9) .mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, html:not(.ie9) .mCS-minimal-dark.mCSB_scrollTools_onDrag .mCSB_dragger .mCSB_dragger_bar{background: rgba(0,0,0,.3);}
