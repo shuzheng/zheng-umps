@@ -1,3 +1,75 @@
+function changeFrameHeight(ifm){
+	ifm.height = document.documentElement.clientHeight - 118;
+}
+window.onresize=function(){  
+	$('.tab_iframe').css('height', document.documentElement.clientHeight - 118); 
+}
+$(function() {
+	
+});
+// 启动angular
+var app = angular.module('app', ['ngMaterial']);
+app.controller('main', function($scope, $log) {
+	var tabs = [
+		{ title: '首页', content: "1", url: "http://admin.hbdiy.com/"},
+		{ title: '操作', content: "2", url: "http://admin.hbdiy.com/hbdiy-ec-mda/brand/list"}
+	],
+	selected = null,
+	previous = null;
+	$scope.tabs = tabs;
+	$scope.selectedIndex = 0;
+	$scope.$watch('selectedIndex', function(current, old) {
+		previous = selected;
+		selected = tabs[current];
+		// 切换上一个标签
+		if(old + 1 && (old != current)) {
+			//$log.debug(previous.title);
+		}
+		// 切换当前标签
+		if(current + 1) {
+			//$log.debug(selected.url);
+		}
+	});
+	$scope.addTab = function (title, url) {
+		var hasTab = false;
+		for (var i in tabs) {
+			if (tabs[i].title == title) {
+				hasTab = true;
+				$scope.selectedIndex = i;
+			}
+		}
+		if (!hasTab) {
+			tabs.push({ title: title, url: url});
+		}
+	};
+	$scope.removeTab = function (tab) {
+		var index = tabs.indexOf(tab);
+		tabs.splice(index, 1);
+	};
+	$scope.changeFrameHeight = changeFrameHeight;
+});
+// url防注入过滤器
+app.filter('trustAsResourceUrl', ['$sce', function($sce) {
+    return function(val) {
+        return $sce.trustAsResourceUrl(val);
+    };
+}])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------- app.js ---------------------------------------------*/
 $(document).ready(function () {
     $('body').on('click', '[data-ma-action]', function (e) {
         e.preventDefault();
@@ -432,12 +504,6 @@ $(document).ready(function(){
 
 
 
-function changeFrameHeight(ifm){
-	ifm.height = document.documentElement.clientHeight - 118;
-}
-window.onresize=function(){  
-	$('.tab_iframe').css('height', document.documentElement.clientHeight - 118); 
-} 
 
 
 

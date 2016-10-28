@@ -217,7 +217,7 @@
             <!-- /Top Search Content -->
         </header>
 
-        <section id="main">
+        <section id="main" ng-controller="main">
 			<!-- 左侧导航区 -->
             <aside id="sidebar" class="sidebar c-overflow">
 				<!-- 个人资料区 -->
@@ -255,7 +255,7 @@
 					<li class="sub-menu">
                         <a class="waves-effect" href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-widgets"></i> 系统管理</a>
                         <ul>
-                            <li><a class="waves-effect" href="javascript:;">系统注册</a></li>
+                            <li><a class="waves-effect" href="javascript:;" ng-click="addTab('系统注册', 'http://admin.hbdiy.com/')">系统注册</a></li>
                             <li><a class="waves-effect" href="javascript:;">系统状态</a></li>
                         </ul>
                     </li>
@@ -360,11 +360,18 @@
 
             <section id="content">
                 <div class="container">
-					<md-tabs>
-						<md-tab label="首页">
-						<iframe class="tab_iframe" src="http://admin.hbdiy.com/hbdiy-ec-mda//brand/list" width="100%" frameborder="0" scrolling="auto" onload="changeFrameHeight(this)"></iframe>
-						</md-tab>
-					</md-tabs>
+					<md-content>
+						<md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect>
+							<md-tab ng-repeat="tab in tabs" label="{{tab.title}}">
+								<iframe class="tab_iframe" ng-src="{{tab.url | trustAsResourceUrl}}" width="100%" frameborder="0" scrolling="auto" ng-onload="changeFrameHeight(this)"></iframe>
+							</md-tab>
+							<!--
+							<md-tab label="首页">
+							<iframe class="tab_iframe" src="http://admin.hbdiy.com/hbdiy-ec-mda//brand/list" width="100%" frameborder="0" scrolling="auto" onload="changeFrameHeight(this)"></iframe>
+							</md-tab>
+							-->
+						</md-tabs>
+					</md-content>
                 </div>
             </section>
         </section>
@@ -469,6 +476,5 @@
 		<script src="angular/angular-material-1.1.1/angular-material.min.js"></script>
 
         <script src="js/zheng.js"></script>
-		<script>var app = angular.module('app', ['ngMaterial']);</script>
     </body>
   </html>
