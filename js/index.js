@@ -1,8 +1,12 @@
-function changeFrameHeight(ifm){
+function changeFrameHeight(ifm) {
 	ifm.height = document.documentElement.clientHeight - 118;
 }
-window.onresize=function(){  
-	$('.tab_iframe').css('height', document.documentElement.clientHeight - 118); 
+function resizeFrameHeight() {
+	$('.tab_iframe').css('height', document.documentElement.clientHeight - 118);
+	$('md-tab-content').css('left', '0');
+}
+window.onresize = function(){  
+	 resizeFrameHeight();
 }
 $(function() {
 	
@@ -11,8 +15,7 @@ $(function() {
 var app = angular.module('app', ['ngMaterial']);
 app.controller('main', function($scope, $log) {
 	var tabs = [
-		{ title: '首页', content: "1", url: "http://admin.hbdiy.com/"},
-		{ title: '操作', content: "2", url: "http://admin.hbdiy.com/hbdiy-ec-mda/brand/list"}
+		{ title: '首页', content: "1", url: "table.html"}
 	],
 	selected = null,
 	previous = null;

@@ -1,0 +1,42 @@
+body{width: 100%;font-family: roboto,'Microsoft yahei';position: fixed;
+    height: calc(100% - 70px);
+    transition: all;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    overflow-y: auto;}
+
+#main{padding-top: 30px; padding-bottom: 0;}
+
+.animated {
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+/* input特效 */
+input{box-shadow:0 0 0 40px transparent!important;transition:all;transition-duration:.3s;}
+input:focus{box-shadow:0 0 1px -2px rgba(121,194,255,.5)!important;}
+
+/* 信息框 */
+.hi-menu>li .dropdown-menu{top: 36px;}
+
+/* 中央区*/
+.container, .container-fluid{height: 100%; padding: 0;}
+@media (min-width: 1280px) {
+    #content:not(.content-alt) {
+        padding-left: 0;
+        padding-right: 0
+    }
+}
+@media (min-width: 768px) and (max-width:1279px) {
+    #content {
+        padding-left: 0;
+        padding-right: 0
+    }
+}
+#content {height: 100%;}
+
+/*
+表格：jQuery Bootgrid http://www.jquery-bootgrid.com/Examples
+*/

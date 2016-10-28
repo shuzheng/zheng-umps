@@ -17,7 +17,7 @@
         <!-- CSS -->
         <link href="full/css/app_1.min.css" rel="stylesheet">
         <link href="full/css/app_2.min.css" rel="stylesheet">
-        <link href="css/zheng.css" rel="stylesheet">
+        <link href="css/index.css" rel="stylesheet">
 		<!-- /CSS -->
     </head>
     <body ng-app="app" ng-cloak>
@@ -56,7 +56,7 @@
                         </li>
 						<!-- /搜索 -->
 						<!-- 消息 -->
-                        <li class="dropdown"><!--data-animation="fadeIn, fadeOut"-->
+                        <li class="dropdown" data-animation="fadeInUp, fadeOutDown">
                             <a data-toggle="dropdown" href="">
                                 <i class="him-icon zmdi zmdi-email"></i>
                                 <i class="him-counts">4</i>
@@ -83,7 +83,7 @@
                         </li>
 						<!-- /消息 -->
 						<!-- 提醒 -->
-                        <li class="dropdown">
+                        <li class="dropdown" data-animation="fadeInUp, fadeOutDown">
                             <a data-toggle="dropdown" href="">
                                 <i class="him-icon zmdi zmdi-notifications"></i>
                                 <i class="him-counts">9</i>
@@ -117,7 +117,7 @@
                         </li>
 						<!-- /提醒 -->
 						<!-- 待办事项 -->
-                        <li class="dropdown hidden-xs">
+                        <li class="dropdown hidden-xs" data-animation="fadeInUp, fadeOutDown">
                             <a data-toggle="dropdown" href="">
                                 <i class="him-icon zmdi zmdi-view-list-alt"></i>
                                 <i class="him-counts">2</i>
@@ -144,7 +144,7 @@
                         </li>
 						<!-- /待办事项 -->
 						<!-- 系统切换 -->
-                        <li class="dropdown">
+                        <li class="dropdown" data-animation="fadeInUp, fadeOutDown">
                             <a data-toggle="dropdown" href="">
                                 <i class="him-icon zmdi zmdi-dropbox"></i>
                             </a>
@@ -169,7 +169,7 @@
                         </li>
 						<!-- /系统切换 -->
 						<!-- 更多选项 -->
-                        <li class="dropdown">
+                        <li class="dropdown" data-animation="fadeInUp, fadeOutDown">
                             <a data-toggle="dropdown" href="">
 								<i class="him-icon zmdi zmdi-more-vert"></i>
 							</a>
@@ -255,36 +255,36 @@
 					<li class="sub-menu">
                         <a class="waves-effect" href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-widgets"></i> 系统管理</a>
                         <ul>
-                            <li><a class="waves-effect" href="javascript:;" ng-click="addTab('系统注册', 'http://admin.hbdiy.com/')">系统注册</a></li>
-                            <li><a class="waves-effect" href="javascript:;">系统状态</a></li>
+                            <li><a class="waves-effect" href="javascript:;" ng-click="addTab('系统注册', 'table.html')">系统注册</a></li>
+                            <li><a class="waves-effect" href="javascript:;" ng-click="addTab('系统状态', 'typography.html')">系统状态</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
                         <a class="waves-effect" href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-widgets"></i> 组织管理</a>
                         <ul>
-                            <li><a class="waves-effect" href="javascript:;">组织机构</a></li>
+                            <li><a class="waves-effect" href="javascript:;" ng-click="addTab('组织机构', 'table.html')">组织机构</a></li>
                         </ul>
                     </li>
 					<li class="sub-menu">
                         <a class="waves-effect" href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-widgets"></i> 资源管理</a>
                         <ul>
-                            <li><a class="waves-effect" href="javascript:;">资源管理</a></li>
+                            <li><a class="waves-effect" href="javascript:;" ng-click="addTab('资源管理', 'table.html')">资源管理</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
                         <a class="waves-effect" href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-widgets"></i> 用户管理</a>
                         <ul>
-                            <li><a class="waves-effect" href="javascript:;">用户组管理</a></li>
-                            <li><a class="waves-effect" href="javascript:;">角色管理</a></li>
-                            <li><a class="waves-effect" href="javascript:;">用户管理</a></li>
+                            <li><a class="waves-effect" href="javascript:;" ng-click="addTab('用户组管理', 'table.html')">用户组管理</a></li>
+                            <li><a class="waves-effect" href="javascript:;" ng-click="addTab('角色管理', 'table.html')">角色管理</a></li>
+                            <li><a class="waves-effect" href="javascript:;" ng-click="addTab('用户管理', 'table.html')">用户管理</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
                         <a class="waves-effect" href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-widgets"></i> 权限管理</a>
                         <ul>
-                            <li><a class="waves-effect" href="javascript:;">用户组权限</a></li>
-                            <li><a class="waves-effect" href="javascript:;">角色权限</a></li>
-                            <li><a class="waves-effect" href="javascript:;">用户权限</a></li>
+                            <li><a class="waves-effect" href="javascript:;" ng-click="addTab('用户组权限', 'table.html')">用户组权限</a></li>
+                            <li><a class="waves-effect" href="javascript:;" ng-click="addTab('角色权限', 'table.html')">角色权限</a></li>
+                            <li><a class="waves-effect" href="javascript:;" ng-click="addTab('用户权限', 'table.html')">用户权限</a></li>
                         </ul>
                     </li>
 					<!--
@@ -313,16 +313,16 @@
                     <li class="sub-menu">
                         <a class="waves-effect" href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-widgets"></i> 系统管理</a>
                         <ul>
-                            <li><a class="waves-effect" href="javascript:;">系统备份</a></li>
-                            <li><a class="waves-effect" href="javascript:;">数据统计</a></li>
+                            <li><a class="waves-effect" href="javascript:;" ng-click="addTab('系统备份', 'table.html')">系统备份</a></li>
+                            <li><a class="waves-effect" href="javascript:;" ng-click="addTab('数据统计', 'table.html')">数据统计</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
                         <a class="waves-effect" href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-widgets"></i> DEMO</a>
                         <ul>
-                            <li><a class="waves-effect" href="javascript:;">获取资源(DEMO)</a></li>
-                            <li><a class="waves-effect" href="javascript:;">获取权限(DEMO)</a></li>
-                            <li><a class="waves-effect" href="javascript:;">单点登录(DEMO)</a></li>
+                            <li><a class="waves-effect" href="javascript:;" ng-click="addTab('获取资源(DEMO)', 'table.html')">获取资源(DEMO)</a></li>
+                            <li><a class="waves-effect" href="javascript:;" ng-click="addTab('获取权限(DEMO)', 'table.html')">获取权限(DEMO)</a></li>
+                            <li><a class="waves-effect" href="javascript:;" ng-click="addTab('单点登录(DEMO)', 'table.html')">单点登录(DEMO)</a></li>
                         </ul>
                     </li>
                     <li>
@@ -363,11 +363,11 @@
 					<md-content>
 						<md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect>
 							<md-tab ng-repeat="tab in tabs" label="{{tab.title}}">
-								<iframe class="tab_iframe" ng-src="{{tab.url | trustAsResourceUrl}}" width="100%" frameborder="0" scrolling="auto" ng-onload="changeFrameHeight(this)"></iframe>
+								<iframe class="tab_iframe" ng-src="{{tab.url | trustAsResourceUrl}}" width="100%" frameborder="0" scrolling="auto" onload="changeFrameHeight(this)"></iframe>
 							</md-tab>
 							<!--
 							<md-tab label="首页">
-							<iframe class="tab_iframe" src="http://admin.hbdiy.com/hbdiy-ec-mda//brand/list" width="100%" frameborder="0" scrolling="auto" onload="changeFrameHeight(this)"></iframe>
+							<iframe class="tab_iframe" src="table.htmlhbdiy-ec-mda//brand/list" width="100%" frameborder="0" scrolling="auto" onload="changeFrameHeight(this)"></iframe>
 							</md-tab>
 							-->
 						</md-tabs>
@@ -475,6 +475,6 @@
 		<link rel="stylesheet" href="angular/angular-material-1.1.1/angular-material.min.css"/>
 		<script src="angular/angular-material-1.1.1/angular-material.min.js"></script>
 
-        <script src="js/zheng.js"></script>
+        <script src="js/index.js"></script>
     </body>
   </html>

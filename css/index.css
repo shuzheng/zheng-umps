@@ -4,13 +4,14 @@ body{font-family: roboto,'Microsoft yahei'; overflow: hidden !important;}
 #main{height: 100%; padding-top: 70px; padding-bottom: 0;}
 
 .animated {
-    -webkit-animation-duration: .6s;
-    animation-duration: .6s;
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
 
 /* 选项卡 */
+md-content{height: 100%;}
 md-tabs{height: 100%;}
 md-tabs-wrapper{background-color: #03a2ea !important;}
 md-tabs.md-default-theme .md-tab .md-ripple-container, md-tabs .md-tab .md-ripple-container{color: rgb(222,54,65);}
@@ -41,17 +42,5 @@ md-tab-content {padding: 0; overflow: hidden !important;}
     box-shadow: 1px 0 4px rgba(0,0,0,.3);
 }
 
-/* input特效 */
-input{box-shadow:0 0 0 40px transparent!important;transition:all;transition-duration:.3s;}
-input:focus{box-shadow:0 0 1px -2px rgba(121,194,255,.5)!important;}
-
 /* 信息框 */
 .hi-menu>li .dropdown-menu{top: 36px;}
-
-/* 滚动条 */
-.mCSB_outside+.mCS-minimal-dark.mCSB_scrollTools_vertical, .mCSB_outside+.mCS-minimal.mCSB_scrollTools_vertical{/*left: 0;*/}
-html:not(.ie9) .mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, html:not(.ie9) .mCS-minimal-dark.mCSB_scrollTools_onDrag .mCSB_dragger .mCSB_dragger_bar{background: rgba(0,0,0,.3);}
-
-/*
-表格：jQuery Bootgrid http://www.jquery-bootgrid.com/Examples
-*/
