@@ -15,7 +15,7 @@ $(function() {
 var app = angular.module('app', ['ngMaterial']);
 app.controller('main', function($scope, $log) {
 	var tabs = [
-		{ title: '首页', content: "1", url: "table.html"}
+		{ title: '首页', content: "1", url: "form-components.html"}
 	],
 	selected = null,
 	previous = null;

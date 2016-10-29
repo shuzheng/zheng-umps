@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>通用用户权限管理系统</title>
+
+        <!-- Vendor CSS -->
+        <link href="full/vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+        <link href="full/vendors/bower_components/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+        <link href="full/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+        <link href="full/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+        <link href="full/vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet">
+        <link href="full/vendors/bower_components/nouislider/distribute/nouislider.min.css" rel="stylesheet">
+        <link href="full/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+        <link href="full/vendors/bower_components/dropzone/dist/min/dropzone.min.css" rel="stylesheet">
+        <link href="full/vendors/farbtastic/farbtastic.css" rel="stylesheet">
+        <link href="full/vendors/bower_components/chosen/chosen.css" rel="stylesheet">
+        <link href="full/vendors/summernote/dist/summernote.css" rel="stylesheet">
+
+        <link href="full/vendors/jquery.bootgrid-1.3.1/jquery.bootgrid.min.css" rel="stylesheet">
+        <!-- /Vendor CSS -->
+
+        <!-- CSS -->
+        <link href="full/css/app_1.min.css" rel="stylesheet">
+        <link href="full/css/app_2.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+		<!-- /CSS -->
+    </head>
+    <body class="c-overflow">
+        <section id="main">
+			<section id="content">
+                <div class="container">
+                    <table id="grid-keep-selection" class="table table-condensed table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th data-column-id="id" data-type="numeric" data-identifier="true">ID</th>
+                            <th data-column-id="sender">Sender</th>
+                            <th data-column-id="received" data-order="desc">Received</th>
+                            <th data-column-id="link" data-formatter="link" data-sortable="false">Link</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+			</section>
+        </section>
+
+        <!-- Page Loader -->
+        <div class="page-loader">
+            <div class="preloader pls-blue">
+                <svg class="pl-circular" viewBox="25 25 50 50">
+                    <circle class="plc-path" cx="50" cy="50" r="20" />
+                </svg>
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Javascript Libraries -->
+        <script src="full/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="full/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <script src="full/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="full/vendors/bower_components/Waves/dist/waves.min.js"></script>
+        <script src="full/vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+        <script src="full/vendors/bower_components/sweetalert2/dist/sweetalert2.min.js"></script>
+
+        <script src="full/vendors/bower_components/moment/min/moment.min.js"></script>
+        <script src="full/vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+        <script src="full/vendors/bower_components/nouislider/distribute/nouislider.min.js"></script>
+        <script src="full/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="full/vendors/bower_components/typeahead.js/dist/typeahead.bundle.min.js"></script>
+        <script src="full/vendors/bower_components/dropzone/dist/min/dropzone.min.js"></script>
+        <script src="full/vendors/summernote/dist/summernote-updated.min.js"></script>
+
+
+        <!-- Placeholder for IE9 -->
+        <!--[if IE 9 ]>
+            <script src="full/vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+        <![endif]-->
+
+        <script src="full/vendors/bower_components/chosen/chosen.jquery.js"></script>
+        <script src="full/vendors/bower_components/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+        <script src="full/vendors/fileinput/fileinput.min.js"></script>
+        <script src="full/vendors/farbtastic/farbtastic.min.js"></script>
+
+        <script src="full/vendors/jquery.bootgrid-1.3.1/jquery.bootgrid.min.js"></script>
+
+        <script src="js/common.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#grid-keep-selection").bootgrid({
+                    ajax: true,
+                    post: function ()
+                    {
+                        /* To accumulate custom parameter with the request object */
+                        return {
+                            id: "b0df282a-0d67-40e5-8558-c9e93b7befed"
+                        };
+                    },
+                    url: "/api/data/basic",
+                    selection: true,
+                    multiSelect: true,
+                    rowSelect: true,
+                    keepSelection: true,
+                    formatters: {
+                        "link": function(column, row)
+                        {
+                            return "<a href=\"#\">" + column.id + ": " + row.id + "</a>";
+                        }
+                    }
+                }).on("selected.rs.jquery.bootgrid", function(e, rows)
+                {
+                    var rowIds = [];
+                    for (var i = 0; i < rows.length; i++)
+                    {
+                        rowIds.push(rows[i].id);
+                    }
+                    alert("Select: " + rowIds.join(","));
+                }).on("deselected.rs.jquery.bootgrid", function(e, rows)
+                {
+                    var rowIds = [];
+                    for (var i = 0; i < rows.length; i++)
+                    {
+                        rowIds.push(rows[i].id);
+                    }
+                    alert("Deselect: " + rowIds.join(","));
+                });
+            });
+        </script>
+    </body>
+  </html>
