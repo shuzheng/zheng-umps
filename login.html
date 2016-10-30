@@ -7,30 +7,30 @@
         <title>Material Admin</title>
 
         <!-- Vendor CSS -->
-        <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
-        <link href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+        <link href="full/vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+        <link href="full/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
 
         <!-- CSS -->
-        <link href="css/app_1.min.css" rel="stylesheet">
-        <link href="css/app_2.min.css" rel="stylesheet">
+        <link href="full/css/app_1.min.css" rel="stylesheet">
+        <link href="full/css/app_2.min.css" rel="stylesheet">
     </head>
 
     <body>
-        <div class="login-content">
+        <div class="login-content" style="background-color:#29a176;">
             <!-- Login -->
             <div class="lc-block toggled" id="l-login">
                 <div class="lcb-form">
                     <div class="input-group m-b-20">
                         <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
                         <div class="fg-line">
-                            <input type="text" class="form-control" placeholder="Username">
+                            <input type="text" class="form-control" placeholder="账号">
                         </div>
                     </div>
 
                     <div class="input-group m-b-20">
                         <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
                         <div class="fg-line">
-                            <input type="password" class="form-control" placeholder="Password">
+                            <input type="password" class="form-control" placeholder="密码">
                         </div>
                     </div>
 
@@ -38,17 +38,19 @@
                         <label>
                             <input type="checkbox" value="">
                             <i class="input-helper"></i>
-                            Keep me signed in
+                            记住密码
                         </label>
                     </div>
 
                     <a href="" class="btn btn-login btn-success btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
                 </div>
 
+                <!--
                 <div class="lcb-navigation">
-                    <a href="" data-ma-action="login-switch" data-ma-block="#l-register"><i class="zmdi zmdi-plus"></i> <span>Register</span></a>
-                    <a href="" data-ma-action="login-switch" data-ma-block="#l-forget-password"><i>?</i> <span>Forgot Password</span></a>
+                    <a href="" data-ma-action="login-switch" data-ma-block="#l-register"><i class="zmdi zmdi-plus"></i> <span>免费注册</span></a>
+                    <a href="" data-ma-action="login-switch" data-ma-block="#l-forget-password"><i>?</i> <span>忘记密码</span></a>
                 </div>
+                -->
             </div>
 
             <!-- Register -->
@@ -57,21 +59,21 @@
                     <div class="input-group m-b-20">
                         <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
                         <div class="fg-line">
-                            <input type="text" class="form-control" placeholder="Username">
+                            <input type="text" class="form-control" placeholder="账号">
                         </div>
                     </div>
 
                     <div class="input-group m-b-20">
                         <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
                         <div class="fg-line">
-                            <input type="text" class="form-control" placeholder="Email Address">
+                            <input type="text" class="form-control" placeholder="邮箱">
                         </div>
                     </div>
 
                     <div class="input-group m-b-20">
                         <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
                         <div class="fg-line">
-                            <input type="password" class="form-control" placeholder="Password">
+                            <input type="password" class="form-control" placeholder="密码">
                         </div>
                     </div>
 
@@ -79,8 +81,8 @@
                 </div>
 
                 <div class="lcb-navigation">
-                    <a href="" data-ma-action="login-switch" data-ma-block="#l-login"><i class="zmdi zmdi-long-arrow-right"></i> <span>Sign in</span></a>
-                    <a href="" data-ma-action="login-switch" data-ma-block="#l-forget-password"><i>?</i> <span>Forgot Password</span></a>
+                    <a href="" data-ma-action="login-switch" data-ma-block="#l-login"><i class="zmdi zmdi-long-arrow-right"></i> <span>登录</span></a>
+                    <a href="" data-ma-action="login-switch" data-ma-block="#l-forget-password"><i>?</i> <span>忘记密码</span></a>
                 </div>
             </div>
 
@@ -100,8 +102,8 @@
                 </div>
 
                 <div class="lcb-navigation">
-                    <a href="" data-ma-action="login-switch" data-ma-block="#l-login"><i class="zmdi zmdi-long-arrow-right"></i> <span>Sign in</span></a>
-                    <a href="" data-ma-action="login-switch" data-ma-block="#l-register"><i class="zmdi zmdi-plus"></i> <span>Register</span></a>
+                    <a href="" data-ma-action="login-switch" data-ma-block="#l-login"><i class="zmdi zmdi-long-arrow-right"></i> <span>登录</span></a>
+                    <a href="" data-ma-action="login-switch" data-ma-block="#l-register"><i class="zmdi zmdi-plus"></i> <span>注册</span></a>
                 </div>
             </div>
         </div>
@@ -151,16 +153,16 @@
         <![endif]-->
 
         <!-- Javascript Libraries -->
-        <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="full/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="full/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-        <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
+        <script src="full/vendors/bower_components/Waves/dist/waves.min.js"></script>
 
         <!-- Placeholder for IE9 -->
         <!--[if IE 9 ]>
-            <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+            <script src="full/vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
         <![endif]-->
 
-        <script src="js/app.min.js"></script>
+        <script src="full/js/app.min.js"></script>
     </body>
 </html>
