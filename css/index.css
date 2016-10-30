@@ -11,9 +11,10 @@ body{font-family: roboto,'Microsoft yahei'; overflow: hidden !important;}
 }
 
 /* 选项卡 */
+[data-ma-theme=blue]{background: #29a176;}
 md-content{height: 100%;}
 md-tabs{height: 100%;}
-md-tabs-wrapper{background-color: #03a2ea !important;}
+md-tabs-wrapper{background-color: #25966f !important;}
 md-tabs.md-default-theme .md-tab .md-ripple-container, md-tabs .md-tab .md-ripple-container{color: rgb(222,54,65);}
 md-tabs md-ink-bar{height: 3px;}
 md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar{color: #FFF; background: #FFEB3B;}
@@ -44,3 +45,5 @@ md-tab-content {padding: 0; overflow: hidden !important;}
 
 /* 信息框 */
 .hi-menu>li .dropdown-menu{top: 36px;}
+
+.s-profile>a{background: url(../img/profile-menu.png) left top no-repeat;}

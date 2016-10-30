@@ -5,7 +5,7 @@ body{width: 100%;font-family: roboto,'Microsoft yahei';position: fixed;
     transition-duration: .3s;
     overflow-y: auto;}
 
-#main{padding-top: 30px; padding-bottom: 0;}
+#main{padding-top: 15px; padding-bottom: 0;}
 
 .animated {
     -webkit-animation-duration: .3s;
@@ -22,7 +22,7 @@ input:focus{box-shadow:0 0 1px -2px rgba(121,194,255,.5)!important;}
 .hi-menu>li .dropdown-menu{top: 36px;}
 
 /* 中央区*/
-.container, .container-fluid{height: 100%; padding: 0;}
+/*.container, .container-fluid{height: 100%; padding: 0;}*/
 @media (min-width: 1280px) {
     #content:not(.content-alt) {
         padding-left: 0;
@@ -40,3 +40,9 @@ input:focus{box-shadow:0 0 1px -2px rgba(121,194,255,.5)!important;}
 /*
 表格：jQuery Bootgrid http://www.jquery-bootgrid.com/Examples
 */
+.card{padding: 5px 0;}
+.bootgrid-header .search{width: 160px;}
+.table>tbody>tr>td:first-child, .table>tbody>tr>th:first-child, .table>tfoot>tr>td:first-child, .table>tfoot>tr>th:first-child, .table>thead>tr>td:first-child, .table>thead>tr>th:first-child{padding-right: 30px;}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{vertical-align: middle;}
+.table-condensed>tbody>tr>td, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>td, .table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td, .table-condensed>thead>tr>th{padding: 5px 10px;}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{background: #29a176;}
