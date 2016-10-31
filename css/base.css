@@ -42,7 +42,13 @@ input:focus{box-shadow:0 0 1px -2px rgba(121,194,255,.5)!important;}
 */
 .card{padding: 5px 0;}
 .bootgrid-header .search{width: 160px;}
-.table>tbody>tr>td:first-child, .table>tbody>tr>th:first-child, .table>tfoot>tr>td:first-child, .table>tfoot>tr>th:first-child, .table>thead>tr>td:first-child, .table>thead>tr>th:first-child{padding-right: 30px;}
+.table{border-top: 2px solid #25966f;}
+.bootgrid-header{display: none;}
+/* 复选框*/
+.table>tbody>tr>td:first-child, .table>tbody>tr>th:first-child, .table>tfoot>tr>td:first-child, .table>tfoot>tr>th:first-child, .table>thead>tr>td:first-child, .table>thead>tr>th:first-child{padding-right: 50px;}
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{vertical-align: middle;}
 .table-condensed>tbody>tr>td, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>td, .table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td, .table-condensed>thead>tr>th{padding: 5px 10px;}
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{background: #29a176;}
+/* 操作按钮 */
+.datagrid-actions{margin: 16px 0;}
+.datagrid-actions button{margin-left: 15px;}

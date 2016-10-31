@@ -58,20 +58,17 @@
                     </div>
                     -->
                     <div class="card">
-                        <div class="btn-demo">
-                            <button class="btn btn-default waves-effect">Default</button>
-                            <button class="btn btn-info waves-effect">Info</button>
-                            <button class="btn btn-primary waves-effect">Primary</button>
-                            <button class="btn btn-success waves-effect">Success</button>
-                            <button class="btn btn-warning waves-effect">Warning</button>
-                            <button class="btn btn-danger waves-effect">Danger</button>
+                        <div class="datagrid-actions">
+                            <button class="waves-effect waves-button"><i class="zmdi zmdi-plus"></i> 新增用户</button>
+                            <button class="waves-effect waves-button"><i class="zmdi zmdi-edit"></i> 编辑用户</button>
+                            <button class="waves-effect waves-button"><i class="zmdi zmdi-close"></i> 移除用户</button>
                         </div>
                         <table id="datagrid" class="table table-condensed table-hover table-striped">
                             <thead>
                             <tr>
-                                <th data-column-id="id" data-type="numeric" data-identifier="true">编号</th>
+                                <th data-column-id="id" data-type="numeric" data-identifier="true" data-order="desc">编号</th>
                                 <th data-column-id="sender">账号</th>
-                                <th data-column-id="received" data-order="desc">登录时间</th>
+                                <th data-column-id="received">登录时间</th>
                                 <th data-column-id="commands" data-formatter="commands" data-sortable="false">操作</th>
                             </tr>
                             </thead>
@@ -145,13 +142,13 @@
                     for (var i = 0; i < rows.length; i++) {
                         rowIds.push(rows[i].id);
                     }
-                    alert("Select: " + rowIds.join(","));
+                    console.log("Select: " + rowIds.join(","));
                 }).on("deselected.rs.jquery.bootgrid", function(e, rows) {
                     var rowIds = [];
                     for (var i = 0; i < rows.length; i++) {
                         rowIds.push(rows[i].id);
                     }
-                    alert("Deselect: " + rowIds.join(","));
+                    console.log("Deselect: " + rowIds.join(","));
                 });
             });
         </script>
